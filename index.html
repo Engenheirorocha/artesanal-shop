@@ -15,6 +15,7 @@
       background-color: #1f1b16;
       color: #e4c590;
     }
+
     header {
       position: fixed;
       top: 0;
@@ -27,11 +28,13 @@
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
+
     .logo {
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 1px;
     }
+
     nav a {
       margin-left: 25px;
       text-decoration: none;
@@ -39,45 +42,36 @@
       font-size: 16px;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: #fff;
     }
+
     .hero {
       margin-top: 90px;
-      background-image: url('mesa-parametrica-hero.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
     }
+
+    .hero img {
+      width: 100%;
+      max-height: 90vh;
+      object-fit: cover;
+    }
+
     .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: 36px;
+      margin: 20px 0 10px;
       color: #f5deb3;
     }
+
     .hero p {
-      font-size: 20px;
-      max-width: 700px;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
       color: #e4c590;
+      padding: 0 20px;
     }
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 60px 20px;
-      background-color: #2a251f;
-    }
-    .galeria img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
+
     footer {
       background-color: #1a1612;
       text-align: center;
@@ -92,19 +86,15 @@
     <div class="logo">ARTESANAL & SHOP</div>
     <nav>
       <a href="#">Início</a>
-      <a href="#">Portfólio</a>
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
     </nav>
   </header>
+
   <section class="hero">
+    <img src="mesa-parametrica-principal.jpg" alt="Mesa paramétrica escultural">
     <h1>Móveis Orgânicos e Paramétricos</h1>
-    <p>Design exclusivo com essência natural. Criado para transformar espaços com beleza e sofisticação artesanal.</p>
+    <p>Essa peça é uma verdadeira obra de arte funcional. Com curvas que remetem ao movimento da natureza e acabamento refinado, nossos móveis paramétricos unem tecnologia e sensibilidade artesanal para transformar ambientes em experiências únicas.</p>
   </section>
-  <section class="galeria">
-    <img src="mesa-parametrica-1.jpg" alt="Mesa paramétrica 1">
-    <img src="mesa-parametrica-2.jpg" alt="Mesa paramétrica 2">
-  </section>
+
   <footer>
     © 2025 ARTESANAL & SHOP – Todos os direitos reservados
   </footer>
