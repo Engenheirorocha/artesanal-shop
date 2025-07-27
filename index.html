@@ -22,9 +22,9 @@
       width: 100%;
       background-color: #1a1612;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding: 15px 30px;
+      padding: 10px 30px;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
@@ -35,8 +35,14 @@
       letter-spacing: 1px;
     }
 
+    .subtext {
+      font-size: 36px;
+      color: #f5deb3;
+      margin-top: 5px;
+    }
+
     .hero {
-      margin-top: 90px;
+      margin-top: 110px;
       text-align: center;
     }
 
@@ -47,9 +53,7 @@
     }
 
     .hero h1 {
-      font-size: 36px;
-      margin: 20px 0 10px;
-      color: #f5deb3;
+      display: none;
     }
 
     .hero p {
@@ -102,11 +106,11 @@
 <body>
   <header>
     <div class="logo">ARTESANAL & SHOP</div>
+    <div class="subtext">Móveis Orgânicos e Paramétricos</div>
   </header>
 
   <section class="hero">
     <img src="mesa-parametrica-principal.jpg" alt="Mesa paramétrica escultural">
-    <h1>Móveis Orgânicos e Paramétricos</h1>
     <p>Essa peça é uma verdadeira obra de arte funcional. Com curvas que remetem ao movimento da natureza e acabamento refinado, nossos móveis paramétricos unem tecnologia e sensibilidade artesanal para transformar ambientes em experiências únicas.</p>
     <a class="cta" href="https://wa.me/5521964547473?text=Olá!%20Gostaria%20de%20ver%20o%20portfólio%20completo%20dos%20móveis%20paramétricos." target="_blank">📩 Solicitar Portfólio via WhatsApp</a>
   </section>
