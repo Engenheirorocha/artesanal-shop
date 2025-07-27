@@ -22,7 +22,7 @@
       width: 100%;
       background-color: #1a1612;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 15px 30px;
       z-index: 1000;
@@ -33,18 +33,6 @@
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 1px;
-    }
-
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #e4c590;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
     }
 
     .hero {
@@ -72,6 +60,27 @@
       padding: 0 20px;
     }
 
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .whatsapp-float a {
+      display: block;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      line-height: 60px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+
     footer {
       background-color: #1a1612;
       text-align: center;
@@ -84,9 +93,6 @@
 <body>
   <header>
     <div class="logo">ARTESANAL & SHOP</div>
-    <nav>
-      <a href="#">Início</a>
-    </nav>
   </header>
 
   <section class="hero">
@@ -94,6 +100,10 @@
     <h1>Móveis Orgânicos e Paramétricos</h1>
     <p>Essa peça é uma verdadeira obra de arte funcional. Com curvas que remetem ao movimento da natureza e acabamento refinado, nossos móveis paramétricos unem tecnologia e sensibilidade artesanal para transformar ambientes em experiências únicas.</p>
   </section>
+
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5521964547473" target="_blank" title="Fale conosco no WhatsApp">💬</a>
+  </div>
 
   <footer>
     © 2025 ARTESANAL & SHOP – Todos os direitos reservados
