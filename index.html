@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -72,12 +73,23 @@
       margin: 40px 20px;
     }
 
-    .gallery img {
+    .gallery figure {
       max-width: 100%;
+      text-align: center;
+    }
+
+    .gallery img {
+      width: 100%;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       max-height: 400px;
+    }
+
+    .gallery figcaption {
+      font-size: 16px;
+      color: #d6ba8a;
+      margin-top: 10px;
     }
 
     .cta {
@@ -88,7 +100,7 @@
       border-radius: 8px;
       text-decoration: none;
       display: inline-block;
-      margin-bottom: 40px;
+      margin: 20px auto 40px;
       transition: background 0.3s;
     }
 
@@ -128,13 +140,25 @@
   <section class="hero">
     <img src="mesa-parametrica-principal.jpg" alt="Mesa paramétrica escultural">
     <p>Essa peça é uma verdadeira obra de arte funcional. Com curvas que remetem ao movimento da natureza e acabamento refinado, nossos móveis paramétricos unem tecnologia e sensibilidade artesanal para transformar ambientes em experiências únicas.</p>
-    <a class="cta" href="https://wa.me/5521964547473?text=Olá!%20Gostaria%20de%20ver%20o%20portfólio%20completo%20dos%20móveis%20paramétricos." target="_blank">📩 Solicitar Portfólio via WhatsApp</a>
   </section>
 
   <section class="gallery">
-    <img src="il_1588xN.6003210210_o2jt.webp" alt="Estante orgânica paramétrica">
-    <img src="il_1588xN.6560744773_crx8.webp" alt="Mesa de centro curva parametrizada">
-    <img src="il_1588xN.6639857074_2tfm.webp" alt="Relógio paramétrico decorativo">
+    <figure>
+      <img src="il_1588xN.6003210210_o2jt.webp" alt="Estante orgânica paramétrica">
+      <figcaption>Estante paramétrica com formas fluidas e elegância funcional.</figcaption>
+    </figure>
+    <figure>
+      <img src="il_1588xN.6560744773_crx8.webp" alt="Mesa de centro curva parametrizada">
+      <figcaption>Mesa de centro com design curvo, unindo arte e praticidade.</figcaption>
+    </figure>
+    <figure>
+      <img src="il_1588xN.6639857074_2tfm.webp" alt="Relógio paramétrico decorativo">
+      <figcaption>Relógio decorativo com estrutura paramétrica e estilo moderno.</figcaption>
+    </figure>
+  </section>
+
+  <section style="text-align: center;">
+    <a class="cta" href="https://wa.me/5521964547473?text=Olá!%20Gostaria%20de%20ver%20o%20portfólio%20completo%20dos%20móveis%20paramétricos." target="_blank">📩 Solicitar Portfólio via WhatsApp</a>
   </section>
 
   <div class="whatsapp-float">
