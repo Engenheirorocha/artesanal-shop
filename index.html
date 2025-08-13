@@ -6,22 +6,34 @@
   <meta name="description" content="ClauRoche Studio – Móveis orgânicos e paramétricos sob medida. Design exclusivo com formas fluidas, precisão tecnológica e acabamento de alto padrão.">
   <title>ClauRoche Studio – Design Exclusivo em Móveis Paramétricos</title>
 
+  <!-- Canonical & Social -->
+  <link rel="canonical" href="https://seu-dominio.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ClauRoche Studio – Móveis Paramétricos Sob Medida">
+  <meta property="og:description" content="Design orgânico e paramétrico com acabamento de alto padrão. Peças sob medida com diversas paletas de cores e madeiras.">
+  <meta property="og:image" content="https://seu-dominio.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f0e0d">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap">
 
   <style>
     :root{
-      --bg:#1f1b16;
-      --bg-elev:#1a1612;
-      --gold:#e4c590;
-      --gold-2:#f1d6a7;
-      --gold-3:#e9cfa0;
-      --muted:#a59373;
-      --shadow: 0 4px 12px rgba(0,0,0,.45);
+      /* Paleta: charcoal + champagne gold */
+      --bg:#0f0e0d;
+      --bg-elev:#171513;
+      --gold:#efd8a6;
+      --gold-2:#f5e6bf;
+      --gold-3:#e9dbb5;
+      --muted:#b7a482;
+      --shadow: 0 8px 26px rgba(0,0,0,.55);
       --radius: 12px;
       --container: 1120px;
-      --header-h: 84px; /* usado para deslocar o hero abaixo do header */
+      --header-h: 84px;
     }
 
     * { box-sizing: border-box; }
@@ -36,6 +48,26 @@
       text-rendering: optimizeLegibility;
     }
 
+    /* Textura parcial de luxo - lado ESQUERDO até metade da tela, opacidade 30% */
+    body::before{
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: min(40vw, 520px);
+      height: 50vh; /* metade da altura da tela */
+      background: url("Curved-Oak-Slatted-Wall-1-rotated.webp") center/cover no-repeat;
+      opacity: 0.3; /* 30% */
+      filter: contrast(1.05) saturate(.95);
+      pointer-events: none;
+      z-index: 0;
+      /* Degradê suave para integrar ao fundo */
+      -webkit-mask-image: linear-gradient(to right,
+        rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%);
+              mask-image: linear-gradient(to right,
+        rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%);
+    }
+
     a { color: inherit; }
 
     .container{
@@ -43,14 +75,17 @@
       max-width: var(--container);
       margin: 0 auto;
       padding: 0 16px;
+      position: relative;
+      z-index: 1; /* acima da textura */
     }
 
     header {
       position: fixed;
       inset: 0 0 auto 0;
       height: var(--header-h);
-      background: var(--bg-elev);
-      box-shadow: 0 2px 8px rgba(0,0,0,.5);
+      background: rgba(17,15,13,.86);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0,0,0,.5);
       z-index: 1000;
       display: flex;
       align-items: center;
@@ -67,10 +102,11 @@
       font-weight: 700;
       letter-spacing: .5px;
       font-size: clamp(18px, 4vw, 26px);
+      color: var(--gold-2);
     }
     .subtext {
       margin-top: 4px;
-      color: #f5deb3;
+      color: #f0e6cf;
       font-size: clamp(12px, 2.5vw, 14px);
     }
 
@@ -86,16 +122,17 @@
       font-size: clamp(20px, 5.5vw, 32px);
       color: var(--gold-2);
       letter-spacing: .3px;
+      text-shadow: 0 1px 0 rgba(0,0,0,.4);
     }
     .intro p{
       margin: 8px auto;
       max-width: 900px;
       color: var(--gold-3);
       font-size: clamp(14px, 3.6vw, 18px);
-      line-height: 1.5;
+      line-height: 1.55;
       padding: 0 6px;
     }
-    .intro strong{ color: #f3ddb8; }
+    .intro strong{ color: #fff0cc; }
 
     /* HERO */
     .hero{
@@ -106,7 +143,17 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      background: var(--bg);
+      background: var(--bg-elev);
+      position: relative;
+      isolation: isolate;
+    }
+    .hero .media::after{
+      content:"";
+      position: absolute; inset: 0;
+      background: radial-gradient(1200px 220px at 100% 0%, rgba(239,216,166,.10), transparent 60%),
+                  radial-gradient(900px 180px at 0% 100%, rgba(239,216,166,.08), transparent 65%);
+      pointer-events: none;
+      mix-blend-mode: screen;
     }
     .hero img{
       width: 100%;
@@ -123,12 +170,10 @@
     }
 
     /* GALLERY */
-    .gallery{
-      margin: 28px 0;
-    }
+    .gallery{ margin: 28px 0; content-visibility:auto; contain-intrinsic-size:1px 800px; }
     .grid{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: clamp(12px, 2.8vw, 20px);
     }
     figure{
@@ -144,35 +189,34 @@
       display: block;
       max-height: 420px;
       object-fit: cover;
+      aspect-ratio: 4/5;
     }
     figcaption{
       font-size: clamp(13px, 3.2vw, 16px);
-      color: #d6ba8a;
+      color: #e8d7af;
       padding: 10px 12px 14px;
       text-align: center;
     }
 
     /* CTA */
-    .cta-wrap{
-      text-align: center;
-      margin: 8px 0 44px;
-    }
+    .cta-wrap{ text-align: center; margin: 8px 0 44px; }
     .cta{
       display: inline-block;
       text-decoration: none;
-      background: #25d366;
-      color: #fff;
+      background: linear-gradient(135deg, #d1b577, #b49557);
+      color: #0e0c0a;
       padding: clamp(12px, 3.6vw, 14px) clamp(18px, 5vw, 22px);
       border-radius: 10px;
       font-size: clamp(15px, 3.8vw, 18px);
-      box-shadow: 0 6px 14px rgba(0,0,0,.35);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
       transition: transform .18s ease, filter .18s ease;
       touch-action: manipulation;
+      font-weight: 700;
     }
     .cta:active{ transform: translateY(1px) scale(.99); }
-    .cta:hover{ filter: brightness(1.05); }
+    .cta:hover{ filter: brightness(1.06); }
 
-    /* WHATSAPP FLOAT */
+    /* WhatsApp flutuante */
     .whatsapp-float{
       position: fixed;
       right: 16px;
@@ -201,19 +245,15 @@
       color: var(--muted);
     }
 
-    /* Preferência do usuário: reduzir animações */
     @media (prefers-reduced-motion: reduce) {
       .whatsapp-float { animation: none; }
       .cta { transition: none; }
     }
 
-    /* Ajustes finos para telas muito pequenas */
     @media (max-width: 380px){
       :root{ --header-h: 76px; }
       .intro p, .hero p{ padding: 0 2px; }
     }
-
-    /* Telas médias+ ganham mais respiro lateral */
     @media (min-width: 900px){
       .intro{ padding: 32px 0 0; }
       .gallery{ margin: 36px 0; }
@@ -253,21 +293,21 @@
         <figure>
           <img src="il_1588xN.6003210210_o2jt.webp"
                alt="Estante orgânica paramétrica com formas fluidas"
-               loading="lazy" />
+               loading="lazy" width="800" height="1000" />
           <figcaption>Estante paramétrica com formas fluidas e elegância funcional.</figcaption>
         </figure>
 
         <figure>
           <img src="il_1588xN.6560744773_crx8.webp"
                alt="Mesa de centro curva parametrizada"
-               loading="lazy" />
+               loading="lazy" width="800" height="1000" />
           <figcaption>Mesa de centro com design curvo, unindo arte e praticidade.</figcaption>
         </figure>
 
         <figure>
           <img src="il_1588xN.6639857074_2tfm.webp"
                alt="Relógio paramétrico decorativo de estilo moderno"
-               loading="lazy" />
+               loading="lazy" width="800" height="1000" />
           <figcaption>Relógio decorativo com estrutura paramétrica e estilo moderno.</figcaption>
         </figure>
       </div>
@@ -276,9 +316,9 @@
     <!-- CTA -->
     <section class="cta-wrap container">
       <a class="cta"
-         href="https://wa.me/5521972029943?text=Olá!%20Gostaria%20de%20ver%20o%20portfólio%20completo%20dos%20móveis%20paramétricos."
+         href="https://wa.me/5521972029943?text=Olá!%20Quero%20o%20portfólio%20completo%20e%20um%20orçamento%20sob%20medida."
          target="_blank" rel="noopener">
-        📩 Solicitar Portfólio via WhatsApp
+        ✨ Receber Portfólio & Orçamento no WhatsApp
       </a>
     </section>
   </main>
@@ -292,5 +332,4 @@
 
   <footer>© 2025 ClauRoche Studio – Todos os direitos reservados</footer>
 </body>
-</html> 
-
+</html>
