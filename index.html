@@ -23,7 +23,6 @@
 
   <style>
     :root{
-      /* Paleta: charcoal + champagne gold */
       --bg:#0f0e0d;
       --bg-elev:#171513;
       --gold:#efd8a6;
@@ -48,20 +47,19 @@
       text-rendering: optimizeLegibility;
     }
 
-    /* Textura parcial de luxo - lado ESQUERDO até metade da tela, opacidade 30% */
+    /* Textura de luxo ocupando toda a tela */
     body::before{
       content: "";
       position: fixed;
       top: 0;
       left: 0;
-      width: min(40vw, 520px);
-      height: 50vh; /* metade da altura da tela */
+      width: 100vw;
+      height: 100vh;
       background: url("Curved-Oak-Slatted-Wall-1-rotated.webp") center/cover no-repeat;
-      opacity: 0.3; /* 30% */
+      opacity: 0.3;
       filter: contrast(1.05) saturate(.95);
       pointer-events: none;
       z-index: 0;
-      /* Degradê suave para integrar ao fundo */
       -webkit-mask-image: linear-gradient(to right,
         rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%);
               mask-image: linear-gradient(to right,
@@ -76,7 +74,7 @@
       margin: 0 auto;
       padding: 0 16px;
       position: relative;
-      z-index: 1; /* acima da textura */
+      z-index: 1;
     }
 
     header {
@@ -112,7 +110,6 @@
 
     main { padding-top: calc(var(--header-h) + 16px); }
 
-    /* INTRO */
     .intro{
       padding: 24px 0 8px;
       text-align: center;
@@ -134,7 +131,6 @@
     }
     .intro strong{ color: #fff0cc; }
 
-    /* HERO */
     .hero{
       margin-top: 8px;
       text-align: center;
@@ -169,7 +165,6 @@
       padding: 0 6px;
     }
 
-    /* GALLERY */
     .gallery{ margin: 28px 0; content-visibility:auto; contain-intrinsic-size:1px 800px; }
     .grid{
       display: grid;
@@ -198,7 +193,6 @@
       text-align: center;
     }
 
-    /* CTA */
     .cta-wrap{ text-align: center; margin: 8px 0 44px; }
     .cta{
       display: inline-block;
@@ -210,13 +204,11 @@
       font-size: clamp(15px, 3.8vw, 18px);
       box-shadow: 0 10px 24px rgba(0,0,0,.35);
       transition: transform .18s ease, filter .18s ease;
-      touch-action: manipulation;
       font-weight: 700;
     }
     .cta:active{ transform: translateY(1px) scale(.99); }
     .cta:hover{ filter: brightness(1.06); }
 
-    /* WhatsApp flutuante */
     .whatsapp-float{
       position: fixed;
       right: 16px;
@@ -229,7 +221,6 @@
       height: clamp(48px, 12vw, 60px);
       border-radius: 50%;
       box-shadow: 2px 2px 8px rgba(0,0,0,.35);
-      -webkit-tap-highlight-color: transparent;
     }
     @keyframes pulse{
       0%{ transform: scale(1); }
@@ -269,61 +260,44 @@
   </header>
 
   <main>
-    <!-- Introdução -->
-    <section class="intro container" aria-label="Introdução ClauRoche Studio">
+    <section class="intro container">
       <h1>ClauRoche Studio – Design Exclusivo em Móveis Paramétricos</h1>
       <p>No <strong>ClauRoche Studio</strong>, cada peça é mais que um móvel — é uma obra de arte. Criamos design <strong>orgânico e paramétrico</strong> com acabamentos de alto padrão, formas fluidas e soluções personalizadas que transformam qualquer ambiente.</p>
       <p>Nossa produção combina tecnologia de precisão e o toque artesanal, resultando em móveis únicos, feitos para clientes que valorizam sofisticação e exclusividade.</p>
       <p><strong>Seu espaço merece o extraordinário.</strong></p>
     </section>
 
-    <!-- Hero -->
     <section class="hero container">
       <div class="media">
-        <img src="mesa-ondara.png"
-             alt="Mesa Paramétrica Ondara com tampo de vidro e base ondulada"
-             loading="eager" fetchpriority="high" />
+        <img src="mesa-ondara.png" alt="Mesa Paramétrica Ondara com tampo de vidro e base ondulada" loading="eager" fetchpriority="high" />
       </div>
       <p>A mesa <strong>ONDARA</strong> é a fusão perfeita entre arte e funcionalidade. Seu design escultural com tampo de vidro e base ondulada transforma qualquer ambiente em uma experiência sofisticada e única.</p>
     </section>
 
-    <!-- Galeria -->
-    <section class="gallery container" aria-label="Galeria de produtos">
+    <section class="gallery container">
       <div class="grid">
         <figure>
-          <img src="il_1588xN.6003210210_o2jt.webp"
-               alt="Estante orgânica paramétrica com formas fluidas"
-               loading="lazy" width="800" height="1000" />
+          <img src="il_1588xN.6003210210_o2jt.webp" alt="Estante orgânica paramétrica com formas fluidas" loading="lazy" />
           <figcaption>Estante paramétrica com formas fluidas e elegância funcional.</figcaption>
         </figure>
-
         <figure>
-          <img src="il_1588xN.6560744773_crx8.webp"
-               alt="Mesa de centro curva parametrizada"
-               loading="lazy" width="800" height="1000" />
+          <img src="il_1588xN.6560744773_crx8.webp" alt="Mesa de centro curva parametrizada" loading="lazy" />
           <figcaption>Mesa de centro com design curvo, unindo arte e praticidade.</figcaption>
         </figure>
-
         <figure>
-          <img src="il_1588xN.6639857074_2tfm.webp"
-               alt="Relógio paramétrico decorativo de estilo moderno"
-               loading="lazy" width="800" height="1000" />
+          <img src="il_1588xN.6639857074_2tfm.webp" alt="Relógio paramétrico decorativo de estilo moderno" loading="lazy" />
           <figcaption>Relógio decorativo com estrutura paramétrica e estilo moderno.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-wrap container">
-      <a class="cta"
-         href="https://wa.me/5521972029943?text=Olá!%20Quero%20o%20portfólio%20completo%20e%20um%20orçamento%20sob%20medida."
-         target="_blank" rel="noopener">
+      <a class="cta" href="https://wa.me/5521972029943?text=Olá!%20Quero%20o%20portfólio%20completo%20e%20um%20orçamento%20sob%20medida." target="_blank" rel="noopener">
         ✨ Receber Portfólio & Orçamento no WhatsApp
       </a>
     </section>
   </main>
 
-  <!-- WhatsApp Flutuante -->
   <div class="whatsapp-float">
     <a href="https://wa.me/5521972029943" target="_blank" rel="noopener" title="Fale conosco no WhatsApp">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Ícone do WhatsApp">
